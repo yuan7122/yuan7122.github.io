@@ -2,3 +2,5 @@ let databaseURL = 'https://script.google.com/macros/s/AKfycbzNPpmMM-eZbaRnnOvh6n
 
 // fetch raw database
 let rawProblemData = await fetch(databaseURL).then(res => res['json']());
+
+console.log(rawProblemData)
