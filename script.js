@@ -2,5 +2,15 @@ let databaseURL = 'https://script.google.com/macros/s/AKfycbxRknWkKvGXJ81CX0Hzo3
 
 // fetch raw database
 let rawProblemData = await fetch(databaseURL).then(res => res['json']());
-
+function sendEmail() {
+  Email.send({
+    Host : "smtp.mailtrap.io",
+    To : rawProblemData[0]['email'],
+    From : "sender@example.com",
+    Subject : "Test email",
+    Body : "<html><h2>Header</h2><strong>Bold text</strong><br></br><em>Italic</em></html>"
+  }).then(
+    message => alert(message)
+  );
+}
 console.log(rawProblemData)
